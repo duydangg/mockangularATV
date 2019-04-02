@@ -1,0 +1,76 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<!-- <div class="list-group users-list">
+     <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+       <div class="row">
+ 
+         <div class="col col-md-8 text-col">
+           <h5 class="mb-1">{{item.payload.doc.data().name}} </h5>
+           <small>Age: {{item.payload.doc.data().age}}</small>
+         </div>
+         <div class="col col-md-2 actions-col">
+           <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+             
+           </button>
+         </div>
+       </div>
+     </div>
+   </div> -->
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<hr>
+<div class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
+          <div class="table-responsive">
+            <table class="table user-list">
+              <thead>
+                <tr>
+                  <th><span>User</span></th>
+                  <th><span>Address</span></th>
+                  <th class="text-center"><span>Status</span></th>
+                  <th><span>Email</span></th>
+                  <th>Update</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let item of items">
+                <tr>
+                  <td>
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                    <a href="detail/{{item.payload.doc.data().id}}" class="user-link">{{item.payload.doc.data().name}}</a>
+                    <span class="user-subhead">Age: {{item.payload.doc.data().age}}</span>
+                  </td>
+                  <td>{{item.payload.doc.data().address}}</td>
+                  <td class="text-center">
+                    <span class="label label-default">{{item.payload.doc.data().status}}</span>
+                  </td>
+                  <td>
+                      <span class="label label-default">{{item.payload.doc.data().email}}</span>
+                  </td>
+                  <td style="width: 20%;">
+<form>
+                    <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+                      Edit</button>
+                      </form>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="logout()" class="btn btn-outline-primary action" type="button">Log out</button>
